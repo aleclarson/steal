@@ -1,11 +1,14 @@
 
-isObject = require "isObject"
+PureObject = require "PureObject"
+assertType = require "assertType"
+Kind = require "Kind"
+
+Objectish = [ Kind(Object), PureObject ]
 
 module.exports = (obj, key, defaultValue) ->
-  throw TypeError "'obj' must be an object!" unless isObject obj
-  throw TypeError "'key' must be a string!" unless typeof key is "string"
+  assertType obj, Objectish
+  assertType key, String
   result = obj[key]
-  if result is undefined
-    result = defaultValue
-  else delete obj[key]
-  result
+  result = defaultValue if result is undefined
+  delete obj[key]
+  return result

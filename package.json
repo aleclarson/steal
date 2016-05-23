@@ -1,8 +1,16 @@
 {
   "name": "steal",
-  "version": "1.0.0",
-  "main": "./js/src/steal",
+  "version": "2.0.0",
+  "main": "js/src/steal",
   "dependencies": {
-    "isObject": "aleclarson/isObject#1.0.0"
+    "Kind": "aleclarson/Kind#1.0.0",
+    "PureObject": "aleclarson/PureObject#1.0.0",
+    "assertType": "aleclarson/assertType#1.0.0"
+  },
+  "lotus": {
+    "plugins": [
+      "lotus-coffee",
+      "lotus-runner"
+    ]
   }
 }

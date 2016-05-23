@@ -1,21 +1,22 @@
-var isObject;
+var Kind, Objectish, PureObject, assertType;
 
-isObject = require("isObject");
+PureObject = require("PureObject");
+
+assertType = require("assertType");
+
+Kind = require("Kind");
+
+Objectish = [Kind(Object), PureObject];
 
 module.exports = function(obj, key, defaultValue) {
   var result;
-  if (!isObject(obj)) {
-    throw TypeError("'obj' must be an object!");
-  }
-  if (typeof key !== "string") {
-    throw TypeError("'key' must be a string!");
-  }
+  assertType(obj, Objectish);
+  assertType(key, String);
   result = obj[key];
   if (result === void 0) {
     result = defaultValue;
-  } else {
-    delete obj[key];
   }
+  delete obj[key];
   return result;
 };
 
