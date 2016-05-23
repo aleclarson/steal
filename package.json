@@ -1,0 +1,8 @@
+{
+  "name": "steal",
+  "version": "1.0.0",
+  "main": "./js/src/steal",
+  "dependencies": {
+    "isObject": "aleclarson/isObject#1.0.0"
+  }
+}
