@@ -3,14 +3,12 @@
   "version": "2.0.0",
   "main": "js/src/steal",
   "dependencies": {
-    "Kind": "aleclarson/Kind#1.0.0",
-    "PureObject": "aleclarson/PureObject#1.0.0",
-    "assertType": "aleclarson/assertType#1.0.0"
+    "assert": "aleclarson/assert#1.0.0",
+    "getProto": "aleclarson/getProto#1.0.0"
   },
   "lotus": {
     "plugins": [
-      "lotus-coffee",
-      "lotus-runner"
+      "lotus-coffee"
     ]
   }
 }

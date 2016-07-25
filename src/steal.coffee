@@ -1,14 +1,15 @@
 
-PureObject = require "PureObject"
-assertType = require "assertType"
-Kind = require "Kind"
-
-Objectish = [ Kind(Object), PureObject ]
+getProto = require "getProto"
+assert = require "assert"
 
 module.exports = (obj, key, defaultValue) ->
-  assertType obj, Objectish
-  assertType key, String
+  assert isObjectLike(obj), "'obj' must be object-like!"
+  assert typeof key is "string", "'key' must be a string!"
   result = obj[key]
   result = defaultValue if result is undefined
   delete obj[key]
   return result
+
+isObjectLike = (value) ->
+  return yes if value instanceof Object
+  return not getProto value

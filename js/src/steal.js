@@ -1,17 +1,13 @@
-var Kind, Objectish, PureObject, assertType;
+var assert, getProto, isObjectLike;
 
-PureObject = require("PureObject");
+getProto = require("getProto");
 
-assertType = require("assertType");
-
-Kind = require("Kind");
-
-Objectish = [Kind(Object), PureObject];
+assert = require("assert");
 
 module.exports = function(obj, key, defaultValue) {
   var result;
-  assertType(obj, Objectish);
-  assertType(key, String);
+  assert(isObjectLike(obj), "'obj' must be object-like!");
+  assert(typeof key === "string", "'key' must be a string!");
   result = obj[key];
   if (result === void 0) {
     result = defaultValue;
@@ -20,4 +16,11 @@ module.exports = function(obj, key, defaultValue) {
   return result;
 };
 
-//# sourceMappingURL=../../map/src/steal.map
+isObjectLike = function(value) {
+  if (value instanceof Object) {
+    return true;
+  }
+  return !getProto(value);
+};
+
+//# sourceMappingURL=map/steal.map
