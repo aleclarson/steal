@@ -1,5 +1,5 @@
 
-steal = require "../src/steal"
+steal = require ".."
 
 describe "steal()", ->
 
