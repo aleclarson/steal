@@ -1,7 +1,7 @@
 {
   "name": "steal",
   "version": "2.0.0",
-  "main": "js/src/steal",
+  "main": "js/steal",
   "dependencies": {
     "assert": "aleclarson/assert#1.0.0",
     "getProto": "aleclarson/getProto#1.0.0"

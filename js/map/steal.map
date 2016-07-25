@@ -1,7 +1,7 @@
 {
   "version": 3,
   "file": "steal.js",
-  "sourceRoot": "../../../src",
+  "sourceRoot": "../../src",
   "sources": [
     "steal.coffee"
   ],
