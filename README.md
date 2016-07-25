@@ -1,5 +1,5 @@
 
-# steal 2.0.0 ![stable](https://img.shields.io/badge/stability-stable-4EBA0F.svg?style=flat)
+# steal v1.1.0 ![stable](https://img.shields.io/badge/stability-stable-4EBA0F.svg?style=flat)
 
 ```CoffeeScript
 steal = require "steal"
@@ -28,7 +28,7 @@ It's basically `delete obj[key]`, but `obj[key]` is returned instead of a `Boole
 ## install
 
 ```sh
-npm install aleclarson/steal#1.0.0
+npm install aleclarson/steal#1.1.0
 ```
 
 &nbsp;
