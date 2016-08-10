@@ -3,7 +3,6 @@
   "version": "1.1.0",
   "main": "js/steal",
   "dependencies": {
-    "assert": "aleclarson/assert#1.0.0",
     "getProto": "aleclarson/getProto#1.0.0"
   },
   "lotus": {

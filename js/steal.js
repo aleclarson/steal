@@ -1,26 +1,33 @@
-var assert, getProto, isObjectLike;
+var getProto, isObjectLike;
 
 getProto = require("getProto");
 
-assert = require("assert");
-
 module.exports = function(obj, key, defaultValue) {
   var result;
-  assert(isObjectLike(obj), "'obj' must be object-like!");
-  assert(typeof key === "string", "'key' must be a string!");
-  result = obj[key];
-  if (result === void 0) {
-    result = defaultValue;
+  if (!isObjectLike(obj)) {
+    throw TypeError("'obj' must be object-like!");
   }
+  if (typeof key !== "string") {
+    throw TypeError("'key' must be a string!");
+  }
+  result = obj[key];
   delete obj[key];
+  if (result === void 0) {
+    return defaultValue;
+  }
   return result;
 };
 
 isObjectLike = function(value) {
-  if (value instanceof Object) {
-    return true;
+  if (value) {
+    if (value instanceof Object) {
+      return true;
+    }
+    if (!getProto(value)) {
+      return true;
+    }
   }
-  return !getProto(value);
+  return false;
 };
 
 //# sourceMappingURL=map/steal.map
