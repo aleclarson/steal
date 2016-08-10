@@ -1,9 +1,8 @@
 {
   "name": "steal",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "main": "js/steal",
   "dependencies": {
-    "assert": "aleclarson/assert#1.0.0",
     "getProto": "aleclarson/getProto#1.0.0"
   },
   "lotus": {
