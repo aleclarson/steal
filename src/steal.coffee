@@ -1,12 +1,13 @@
 
 getProto = require "getProto"
+isDev = require "isDev"
 
 module.exports = (obj, key, defaultValue) ->
 
-  if not isObjectLike obj
+  if isDev and not isObjectLike obj
     throw TypeError "'obj' must be object-like!"
 
-  if typeof key isnt "string"
+  if isDev and typeof key isnt "string"
     throw TypeError "'key' must be a string!"
 
   result = obj[key]
@@ -16,6 +17,7 @@ module.exports = (obj, key, defaultValue) ->
     return defaultValue
   return result
 
+isDev and
 isObjectLike = (value) ->
 
   if value

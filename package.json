@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "getProto": "aleclarson/getProto#1.0.0",
+    "isDev": "aleclarson/isDev#2.0.0",
     "postinstall-build": "0.2.x"
   },
   "devDependencies": {
