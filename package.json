@@ -6,15 +6,11 @@
     "lotus-coffee"
   ],
   "scripts": {
-    "build": "coffee -cb -o js src",
-    "postinstall": "postinstall-build js 'npm run build'"
+    "build": "coffee-build -v 1.11.x -b -o js src",
+    "postinstall": "npm run build"
   },
   "dependencies": {
     "getProto": "aleclarson/getProto#1.0.0",
-    "isDev": "aleclarson/isDev#2.0.0",
-    "postinstall-build": "0.2.x"
-  },
-  "devDependencies": {
-    "coffee-script": "1.9.x"
+    "isDev": "aleclarson/isDev#2.0.0"
   }
 }
