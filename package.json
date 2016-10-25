@@ -1,13 +1,16 @@
 {
   "name": "steal",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "main": "js/steal",
-  "dependencies": {
-    "getProto": "aleclarson/getProto#1.0.0"
+  "plugins": [
+    "lotus-coffee"
+  ],
+  "scripts": {
+    "build": "coffee-build -v 1.11.x -b -o js src",
+    "postinstall": "npm run build"
   },
-  "lotus": {
-    "plugins": [
-      "lotus-coffee"
-    ]
+  "dependencies": {
+    "getProto": "aleclarson/getProto#1.0.0",
+    "isDev": "aleclarson/isDev#2.0.0"
   }
 }
