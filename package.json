@@ -1,0 +1,9 @@
+{
+  "name": "steal",
+  "version": "1.2.0",
+  "main": "js/steal",
+  "dependencies": {
+    "getProto": "aleclarson/getProto#1.0.0",
+    "isDev": "aleclarson/isDev#2.0.0"
+  }
+}
