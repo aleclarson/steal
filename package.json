@@ -1,4 +1,7 @@
 {
   "name": "steal",
-  "version": "1.2.0"
+  "version": "1.2.0",
+  "devDependencies": {
+    "testpass": "^0.6.0"
+  }
 }
