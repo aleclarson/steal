@@ -1,34 +1,24 @@
+# steal v1.2.0
 
-# steal v1.2.0 ![stable](https://img.shields.io/badge/stability-stable-4EBA0F.svg?style=flat)
+Like the `delete` keyword, except the value is returned.
 
-```CoffeeScript
-steal = require "steal"
+```js
+let steal = require('steal')
 
-obj = { value: 1 }
+let obj = {
+  foo: 1,
+}
 
-obj.value                       # => 1
-
-steal obj, "value"              # => 1
-
-obj.value                       # => undefined
+steal(obj, 'foo')         // => 1
+obj.foo                   // => undefined
+obj.hasOwnProperty('foo') // => false
 ```
 
-If the `obj[key] === undefined`, the third argument is used as the default value.
+- Inherited values are returned, but not deleted
+- When the property equals `undefined`, the 3rd argument is returned
 
-```CoffeeScript
-steal obj, "noValue"            # => undefined
-
-steal obj, "noValue", 1         # => 1
+```js
+obj.bar = undefined
+steal(obj, 'bar', 2)      // => 2
+obj.hasOwnProperty('bar') // => false
 ```
-
-It's basically `delete obj[key]`, but `obj[key]` is returned instead of a `Boolean`.
-
-&nbsp;
-
-## install
-
-```sh
-npm install aleclarson/steal#1.1.0
-```
-
-&nbsp;
